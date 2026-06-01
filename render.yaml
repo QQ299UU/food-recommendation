@@ -1,0 +1,15 @@
+
+services:
+  - type: web
+    name: food-recommendation-api
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run server:dev
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    autoDeploy: true
+

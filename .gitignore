@@ -1,0 +1,36 @@
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+dist/
+
+# Misc
+.DS_Store
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Database
+data/
+*.db
+*.sqlite
+
+# Uploads
+uploads/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
