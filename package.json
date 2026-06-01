@@ -89,14 +89,11 @@
             "x64"
           ]
         }
-      ],
-      "icon": "public/favicon.svg"
+      ]
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true,
-      "installerIcon": "public/favicon.svg",
-      "uninstallerIcon": "public/favicon.svg"
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
