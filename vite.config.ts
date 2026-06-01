@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
 import { traeBadgePlugin } from 'vite-plugin-trae-solo-badge';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -23,6 +24,34 @@ export default defineConfig({
       autoThemeTarget: '#root'
     }), 
     tsconfigPaths(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: '食探地图',
+        short_name: '食探',
+        description: '美食推荐与探索应用',
+        theme_color: '#FF6B35',
+        background_color: '#FFF8F0',
+        display: 'standalone',
+        scope: '/',
+        start_url: '/',
+        icons: [
+          {
+            src: 'icon-192x192.svg',
+            sizes: '192x192',
+            type: 'image/svg+xml',
+          },
+          {
+            src: 'icon-512x512.svg',
+            sizes: '512x512',
+            type: 'image/svg+xml',
+          },
+        ],
+      },
+      workbox: {
+        globPatterns: ['**/*.{html,js,css,svg,png,jpg}'],
+      },
+    }),
   ],
   server: {
     proxy: {
