@@ -43,12 +43,15 @@ export default function Login() {
   }
 
   return (
-    <main className="mx-auto max-w-6xl px-4 py-12">
-      <div className="mx-auto max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-6"
+         style={{ 
+           background: 'linear-gradient(135deg, #fff7ed 0%, #ffffff 50%, #fef3c7 100%)'
+         }}>
+      <div className="w-full max-w-md">
         <div className="mb-8 text-center">
-          <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-3xl text-white shadow-2xl"
-               style={{ background: 'linear-gradient(135deg, #ea580c 0%, #dc2626 100%)', boxShadow: '0 20px 40px -12px rgba(249, 115, 22, 0.4)' }}>
-            <Sparkles className="h-10 w-10 text-white" />
+          <div className="mb-6 inline-flex h-24 w-24 items-center justify-center rounded-full text-white shadow-2xl animate-bounce"
+               style={{ background: 'linear-gradient(135deg, #ea580c 0%, #dc2626 100%)', boxShadow: '0 25px 50px -12px rgba(249, 115, 22, 0.4)' }}>
+            <Sparkles className="h-12 w-12 text-white" />
           </div>
           <h1 className="mb-3 text-4xl font-bold"
               style={{ 
@@ -64,7 +67,7 @@ export default function Login() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-3xl bg-white shadow-xl"
+        <div className="overflow-hidden rounded-3xl bg-white shadow-2xl"
              style={{ 
                border: '1px solid transparent',
                backgroundClip: 'padding-box',
@@ -184,6 +187,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   )
 }

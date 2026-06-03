@@ -12,46 +12,73 @@ import AdminReviewDetail from '@/pages/AdminReviewDetail'
 export default function App() {
   return (
     <Router>
-      <div className="min-h-dvh bg-zinc-50 text-zinc-900">
-        <TopBar />
-        <Routes>
-          <Route path="/" element={<Discover />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/post/new"
-            element={
-              <RequireAuth>
+      <Routes>
+        {/* 登录页 - 应用入口 */}
+        <Route path="/login" element={<Login />} />
+        
+        {/* 已登录后的页面 */}
+        <Route
+          path="/"
+          element={
+            <RequireAuth>
+              <div className="min-h-dvh bg-gradient-to-br from-orange-50 via-white to-amber-50">
+                <TopBar />
+                <Discover />
+              </div>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/home"
+          element={
+            <RequireAuth>
+              <div className="min-h-dvh bg-gradient-to-br from-orange-50 via-white to-amber-50">
+                <TopBar />
+                <Discover />
+              </div>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/post/new"
+          element={
+            <RequireAuth>
+              <div className="min-h-dvh bg-gradient-to-br from-orange-50 via-white to-amber-50">
+                <TopBar />
                 <NewPost />
-              </RequireAuth>
-            }
-          />
-          <Route path="/post/:id" element={<PostDetail />} />
-          <Route
-            path="/me"
-            element={
-              <RequireAuth>
+              </div>
+            </RequireAuth>
+          }
+        />
+        <Route path="/post/:id" element={<PostDetail />} />
+        <Route
+          path="/me"
+          element={
+            <RequireAuth>
+              <div className="min-h-dvh bg-gradient-to-br from-orange-50 via-white to-amber-50">
+                <TopBar />
                 <Me />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/admin/review"
-            element={
-              <RequireAuth roles={['admin']}>
-                <AdminReviewList />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/admin/review/:id"
-            element={
-              <RequireAuth roles={['admin']}>
-                <AdminReviewDetail />
-              </RequireAuth>
-            }
-          />
-        </Routes>
-      </div>
+              </div>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/admin/review"
+          element={
+            <RequireAuth roles={['admin']}>
+              <AdminReviewList />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/admin/review/:id"
+          element={
+            <RequireAuth roles={['admin']}>
+              <AdminReviewDetail />
+            </RequireAuth>
+          }
+        />
+      </Routes>
     </Router>
   )
 }
